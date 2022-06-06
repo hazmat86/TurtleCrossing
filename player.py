@@ -12,7 +12,7 @@ class Player(Turtle):
         self.color('black')
         self.up()
         self.setheading(90)
-        self.goto(0, -250.00)
+        self.goto(0, -275.00)
 
     def hop(self):
         self.forward(20)
