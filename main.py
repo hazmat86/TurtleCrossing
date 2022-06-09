@@ -31,5 +31,10 @@ while game_is_on:
     for car in carman.cars:
         if car.distance(player) < 20:
             game_is_on = False
+
+    if player.ycor() >= 275:
+        scoreboard.clear()
+        scoreboard.plus_one()
+        player.goto(0, -275)
     
     
