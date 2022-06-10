@@ -11,14 +11,15 @@ screen.tracer(0)
 
 player = Player()
 carman = CarManager()
-scoreboard = Scoreboard(-150)
+scoreboard = Scoreboard(-175)
 
 screen.listen()
 screen.onkeypress(player.hop, "Up")
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    nap = 0.1
+    time.sleep(nap)
     screen.update()
 
     scoreboard.show_score()
@@ -32,9 +33,12 @@ while game_is_on:
         if car.distance(player) < 20:
             game_is_on = False
 
-    if player.ycor() >= 275:
+    if player.ycor() > 285:
         scoreboard.clear()
         scoreboard.plus_one()
         player.goto(0, -275)
+        
+    if player.is_finish():
+        carman.level_up()
     
     

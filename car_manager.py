@@ -6,12 +6,13 @@ from pkg_resources import yield_lines
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
-MOVE_INCREMENT = 10
+MOVE_INCREMENT = 1
 
 
 class CarManager:
     def __init__(self):
         self.cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def makeCar(self):
         new_car = Turtle('square')
@@ -24,7 +25,11 @@ class CarManager:
 
     def move_cars(self):
         for car in self.cars:
-            car.backward(STARTING_MOVE_DISTANCE)
+            car.backward(self.car_speed)
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
 
         
 

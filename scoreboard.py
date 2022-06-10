@@ -9,11 +9,11 @@ class Scoreboard(Turtle):
         self.color('black')
         self.ht()
         self.up()
-        self.goto(x_val, 250)
+        self.goto(x_val, 260)
         self.score = 0
 
     def show_score(self):
-        self.write(self.score, move=False, align='left', font=("Arial", 20,))
+        self.write(f"Level {self.score}", move=False, align='left', font=("Arial", 20,))
 
     def plus_one(self):
         self.score += 1

@@ -17,3 +17,8 @@ class Player(Turtle):
     def hop(self):
         self.forward(20)
 
+    def is_finish(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
